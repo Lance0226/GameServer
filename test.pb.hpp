@@ -5,7 +5,6 @@
 #define PROTOBUF_test_2eproto__INCLUDED
 
 #include <string>
-
 #include <google/protobuf/stubs/common.h>
 
 #if GOOGLE_PROTOBUF_VERSION < 2005000
@@ -26,7 +25,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace tutorial {
+namespace Protocol {
 
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_test_2eproto();

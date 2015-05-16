@@ -1,17 +1,13 @@
 #include <boost/asio.hpp>
 #include <iostream>
 #include <string>
-#include "Server.hpp"
+#include "server.hpp"
 
 
 
 using namespace std;
 using namespace boost::asio;
 using namespace boost;
-
-
-
-
 
 
 int main()
@@ -28,6 +24,4 @@ int main()
     }
     return 0;
     
-        
-        
 }

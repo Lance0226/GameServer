@@ -1,7 +1,7 @@
 #include <boost/asio.hpp>
 #include <iostream>
 #include <string>
-#include "game_server.hpp"
+#include "server.hpp"
 
 
 

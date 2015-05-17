@@ -16,6 +16,7 @@ int main()
     io_service io_service_;
     ip::tcp::endpoint endpoint_(ip::tcp::v4(),8888);
     server ser(io_service_,endpoint_);
+    io_service_.run();
     }
     
     catch(std::exception& e)

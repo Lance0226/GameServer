@@ -14,28 +14,28 @@ class player_table
 {
 public:
            player_table();
-    void   add_player(Person person);
+    void   add_player(player_info person);
     
-    Person get_player(int index);
+    player_info get_player(int index);
     
 private:
-    vector<Person> player_list;
+    vector<player_info> player_list;
     
 };
 
 player_table::player_table()
 {
-    player_list=*new vector<Person>;
+    player_list=*new vector<player_info>;
 }
 
-void player_table::add_player(Person person)
+void player_table::add_player(player_info person)
 {
     player_list.push_back(person);
 }
 
-Person player_table::get_player(int index)
+player_info player_table::get_player(int index)
 {
-    Person person=player_list[index];
+    player_info person=player_list[index];
     return person;
 }
 
@@ -59,7 +59,7 @@ private:
     char column[32][32];
     MYSQL_ROW sql_row;
     
-    Person cur_person;
+    player_info cur_person;
     player_table playertable;
     
 };

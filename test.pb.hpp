@@ -5,6 +5,7 @@
 #define PROTOBUF_test_2eproto__INCLUDED
 
 #include <string>
+
 #include <google/protobuf/stubs/common.h>
 
 #if GOOGLE_PROTOBUF_VERSION < 2005000
@@ -32,18 +33,19 @@ void  protobuf_AddDesc_test_2eproto();
 void protobuf_AssignDesc_test_2eproto();
 void protobuf_ShutdownFile_test_2eproto();
 
-class Person;
+class player_info;
+class player_transform;
 
 // ===================================================================
 
-class Person : public ::google::protobuf::Message {
+class player_info : public ::google::protobuf::Message {
  public:
-  Person();
-  virtual ~Person();
+  player_info();
+  virtual ~player_info();
 
-  Person(const Person& from);
+  player_info(const player_info& from);
 
-  inline Person& operator=(const Person& from) {
+  inline player_info& operator=(const player_info& from) {
     CopyFrom(from);
     return *this;
   }
@@ -57,17 +59,17 @@ class Person : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Person& default_instance();
+  static const player_info& default_instance();
 
-  void Swap(Person* other);
+  void Swap(player_info* other);
 
   // implements Message ----------------------------------------------
 
-  Person* New() const;
+  player_info* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const Person& from);
-  void MergeFrom(const Person& from);
+  void CopyFrom(const player_info& from);
+  void MergeFrom(const player_info& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -121,7 +123,7 @@ class Person : public ::google::protobuf::Message {
   inline ::std::string* release_email();
   inline void set_allocated_email(::std::string* email);
 
-  // @@protoc_insertion_point(class_scope:tutorial.Person)
+  // @@protoc_insertion_point(class_scope:Protocol.player_info)
  private:
   inline void set_has_name();
   inline void clear_has_name();
@@ -144,63 +146,210 @@ class Person : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_test_2eproto();
 
   void InitAsDefaultInstance();
-  static Person* default_instance_;
+  static player_info* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class player_transform : public ::google::protobuf::Message {
+ public:
+  player_transform();
+  virtual ~player_transform();
+
+  player_transform(const player_transform& from);
+
+  inline player_transform& operator=(const player_transform& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const player_transform& default_instance();
+
+  void Swap(player_transform* other);
+
+  // implements Message ----------------------------------------------
+
+  player_transform* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const player_transform& from);
+  void MergeFrom(const player_transform& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string name = 1;
+  inline bool has_name() const;
+  inline void clear_name();
+  static const int kNameFieldNumber = 1;
+  inline const ::std::string& name() const;
+  inline void set_name(const ::std::string& value);
+  inline void set_name(const char* value);
+  inline void set_name(const char* value, size_t size);
+  inline ::std::string* mutable_name();
+  inline ::std::string* release_name();
+  inline void set_allocated_name(::std::string* name);
+
+  // required int32 pos_x = 2;
+  inline bool has_pos_x() const;
+  inline void clear_pos_x();
+  static const int kPosXFieldNumber = 2;
+  inline ::google::protobuf::int32 pos_x() const;
+  inline void set_pos_x(::google::protobuf::int32 value);
+
+  // required int32 pos_y = 3;
+  inline bool has_pos_y() const;
+  inline void clear_pos_y();
+  static const int kPosYFieldNumber = 3;
+  inline ::google::protobuf::int32 pos_y() const;
+  inline void set_pos_y(::google::protobuf::int32 value);
+
+  // required int32 pos_z = 4;
+  inline bool has_pos_z() const;
+  inline void clear_pos_z();
+  static const int kPosZFieldNumber = 4;
+  inline ::google::protobuf::int32 pos_z() const;
+  inline void set_pos_z(::google::protobuf::int32 value);
+
+  // required int32 rot_x = 5;
+  inline bool has_rot_x() const;
+  inline void clear_rot_x();
+  static const int kRotXFieldNumber = 5;
+  inline ::google::protobuf::int32 rot_x() const;
+  inline void set_rot_x(::google::protobuf::int32 value);
+
+  // required int32 rot_y = 6;
+  inline bool has_rot_y() const;
+  inline void clear_rot_y();
+  static const int kRotYFieldNumber = 6;
+  inline ::google::protobuf::int32 rot_y() const;
+  inline void set_rot_y(::google::protobuf::int32 value);
+
+  // required int32 rot_z = 7;
+  inline bool has_rot_z() const;
+  inline void clear_rot_z();
+  static const int kRotZFieldNumber = 7;
+  inline ::google::protobuf::int32 rot_z() const;
+  inline void set_rot_z(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Protocol.player_transform)
+ private:
+  inline void set_has_name();
+  inline void clear_has_name();
+  inline void set_has_pos_x();
+  inline void clear_has_pos_x();
+  inline void set_has_pos_y();
+  inline void clear_has_pos_y();
+  inline void set_has_pos_z();
+  inline void clear_has_pos_z();
+  inline void set_has_rot_x();
+  inline void clear_has_rot_x();
+  inline void set_has_rot_y();
+  inline void clear_has_rot_y();
+  inline void set_has_rot_z();
+  inline void clear_has_rot_z();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* name_;
+  ::google::protobuf::int32 pos_x_;
+  ::google::protobuf::int32 pos_y_;
+  ::google::protobuf::int32 pos_z_;
+  ::google::protobuf::int32 rot_x_;
+  ::google::protobuf::int32 rot_y_;
+  ::google::protobuf::int32 rot_z_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
+
+  friend void  protobuf_AddDesc_test_2eproto();
+  friend void protobuf_AssignDesc_test_2eproto();
+  friend void protobuf_ShutdownFile_test_2eproto();
+
+  void InitAsDefaultInstance();
+  static player_transform* default_instance_;
 };
 // ===================================================================
 
 
 // ===================================================================
 
-// Person
+// player_info
 
 // required string name = 1;
-inline bool Person::has_name() const {
+inline bool player_info::has_name() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Person::set_has_name() {
+inline void player_info::set_has_name() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Person::clear_has_name() {
+inline void player_info::clear_has_name() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Person::clear_name() {
+inline void player_info::clear_name() {
   if (name_ != &::google::protobuf::internal::kEmptyString) {
     name_->clear();
   }
   clear_has_name();
 }
-inline const ::std::string& Person::name() const {
+inline const ::std::string& player_info::name() const {
   return *name_;
 }
-inline void Person::set_name(const ::std::string& value) {
+inline void player_info::set_name(const ::std::string& value) {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   name_->assign(value);
 }
-inline void Person::set_name(const char* value) {
+inline void player_info::set_name(const char* value) {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   name_->assign(value);
 }
-inline void Person::set_name(const char* value, size_t size) {
+inline void player_info::set_name(const char* value, size_t size) {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   name_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* Person::mutable_name() {
+inline ::std::string* player_info::mutable_name() {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   return name_;
 }
-inline ::std::string* Person::release_name() {
+inline ::std::string* player_info::release_name() {
   clear_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -210,7 +359,7 @@ inline ::std::string* Person::release_name() {
     return temp;
   }
 }
-inline void Person::set_allocated_name(::std::string* name) {
+inline void player_info::set_allocated_name(::std::string* name) {
   if (name_ != &::google::protobuf::internal::kEmptyString) {
     delete name_;
   }
@@ -224,75 +373,75 @@ inline void Person::set_allocated_name(::std::string* name) {
 }
 
 // required int32 id = 2;
-inline bool Person::has_id() const {
+inline bool player_info::has_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Person::set_has_id() {
+inline void player_info::set_has_id() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Person::clear_has_id() {
+inline void player_info::clear_has_id() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void Person::clear_id() {
+inline void player_info::clear_id() {
   id_ = 0;
   clear_has_id();
 }
-inline ::google::protobuf::int32 Person::id() const {
+inline ::google::protobuf::int32 player_info::id() const {
   return id_;
 }
-inline void Person::set_id(::google::protobuf::int32 value) {
+inline void player_info::set_id(::google::protobuf::int32 value) {
   set_has_id();
   id_ = value;
 }
 
 // optional string email = 3;
-inline bool Person::has_email() const {
+inline bool player_info::has_email() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void Person::set_has_email() {
+inline void player_info::set_has_email() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void Person::clear_has_email() {
+inline void player_info::clear_has_email() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void Person::clear_email() {
+inline void player_info::clear_email() {
   if (email_ != &::google::protobuf::internal::kEmptyString) {
     email_->clear();
   }
   clear_has_email();
 }
-inline const ::std::string& Person::email() const {
+inline const ::std::string& player_info::email() const {
   return *email_;
 }
-inline void Person::set_email(const ::std::string& value) {
+inline void player_info::set_email(const ::std::string& value) {
   set_has_email();
   if (email_ == &::google::protobuf::internal::kEmptyString) {
     email_ = new ::std::string;
   }
   email_->assign(value);
 }
-inline void Person::set_email(const char* value) {
+inline void player_info::set_email(const char* value) {
   set_has_email();
   if (email_ == &::google::protobuf::internal::kEmptyString) {
     email_ = new ::std::string;
   }
   email_->assign(value);
 }
-inline void Person::set_email(const char* value, size_t size) {
+inline void player_info::set_email(const char* value, size_t size) {
   set_has_email();
   if (email_ == &::google::protobuf::internal::kEmptyString) {
     email_ = new ::std::string;
   }
   email_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* Person::mutable_email() {
+inline ::std::string* player_info::mutable_email() {
   set_has_email();
   if (email_ == &::google::protobuf::internal::kEmptyString) {
     email_ = new ::std::string;
   }
   return email_;
 }
-inline ::std::string* Person::release_email() {
+inline ::std::string* player_info::release_email() {
   clear_has_email();
   if (email_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -302,7 +451,7 @@ inline ::std::string* Person::release_email() {
     return temp;
   }
 }
-inline void Person::set_allocated_email(::std::string* email) {
+inline void player_info::set_allocated_email(::std::string* email) {
   if (email_ != &::google::protobuf::internal::kEmptyString) {
     delete email_;
   }
@@ -315,10 +464,216 @@ inline void Person::set_allocated_email(::std::string* email) {
   }
 }
 
+// -------------------------------------------------------------------
+
+// player_transform
+
+// required string name = 1;
+inline bool player_transform::has_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void player_transform::set_has_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void player_transform::clear_has_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void player_transform::clear_name() {
+  if (name_ != &::google::protobuf::internal::kEmptyString) {
+    name_->clear();
+  }
+  clear_has_name();
+}
+inline const ::std::string& player_transform::name() const {
+  return *name_;
+}
+inline void player_transform::set_name(const ::std::string& value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::kEmptyString) {
+    name_ = new ::std::string;
+  }
+  name_->assign(value);
+}
+inline void player_transform::set_name(const char* value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::kEmptyString) {
+    name_ = new ::std::string;
+  }
+  name_->assign(value);
+}
+inline void player_transform::set_name(const char* value, size_t size) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::kEmptyString) {
+    name_ = new ::std::string;
+  }
+  name_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* player_transform::mutable_name() {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::kEmptyString) {
+    name_ = new ::std::string;
+  }
+  return name_;
+}
+inline ::std::string* player_transform::release_name() {
+  clear_has_name();
+  if (name_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = name_;
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void player_transform::set_allocated_name(::std::string* name) {
+  if (name_ != &::google::protobuf::internal::kEmptyString) {
+    delete name_;
+  }
+  if (name) {
+    set_has_name();
+    name_ = name;
+  } else {
+    clear_has_name();
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// required int32 pos_x = 2;
+inline bool player_transform::has_pos_x() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void player_transform::set_has_pos_x() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void player_transform::clear_has_pos_x() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void player_transform::clear_pos_x() {
+  pos_x_ = 0;
+  clear_has_pos_x();
+}
+inline ::google::protobuf::int32 player_transform::pos_x() const {
+  return pos_x_;
+}
+inline void player_transform::set_pos_x(::google::protobuf::int32 value) {
+  set_has_pos_x();
+  pos_x_ = value;
+}
+
+// required int32 pos_y = 3;
+inline bool player_transform::has_pos_y() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void player_transform::set_has_pos_y() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void player_transform::clear_has_pos_y() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void player_transform::clear_pos_y() {
+  pos_y_ = 0;
+  clear_has_pos_y();
+}
+inline ::google::protobuf::int32 player_transform::pos_y() const {
+  return pos_y_;
+}
+inline void player_transform::set_pos_y(::google::protobuf::int32 value) {
+  set_has_pos_y();
+  pos_y_ = value;
+}
+
+// required int32 pos_z = 4;
+inline bool player_transform::has_pos_z() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void player_transform::set_has_pos_z() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void player_transform::clear_has_pos_z() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void player_transform::clear_pos_z() {
+  pos_z_ = 0;
+  clear_has_pos_z();
+}
+inline ::google::protobuf::int32 player_transform::pos_z() const {
+  return pos_z_;
+}
+inline void player_transform::set_pos_z(::google::protobuf::int32 value) {
+  set_has_pos_z();
+  pos_z_ = value;
+}
+
+// required int32 rot_x = 5;
+inline bool player_transform::has_rot_x() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void player_transform::set_has_rot_x() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void player_transform::clear_has_rot_x() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void player_transform::clear_rot_x() {
+  rot_x_ = 0;
+  clear_has_rot_x();
+}
+inline ::google::protobuf::int32 player_transform::rot_x() const {
+  return rot_x_;
+}
+inline void player_transform::set_rot_x(::google::protobuf::int32 value) {
+  set_has_rot_x();
+  rot_x_ = value;
+}
+
+// required int32 rot_y = 6;
+inline bool player_transform::has_rot_y() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void player_transform::set_has_rot_y() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void player_transform::clear_has_rot_y() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void player_transform::clear_rot_y() {
+  rot_y_ = 0;
+  clear_has_rot_y();
+}
+inline ::google::protobuf::int32 player_transform::rot_y() const {
+  return rot_y_;
+}
+inline void player_transform::set_rot_y(::google::protobuf::int32 value) {
+  set_has_rot_y();
+  rot_y_ = value;
+}
+
+// required int32 rot_z = 7;
+inline bool player_transform::has_rot_z() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void player_transform::set_has_rot_z() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void player_transform::clear_has_rot_z() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void player_transform::clear_rot_z() {
+  rot_z_ = 0;
+  clear_has_rot_z();
+}
+inline ::google::protobuf::int32 player_transform::rot_z() const {
+  return rot_z_;
+}
+inline void player_transform::set_rot_z(::google::protobuf::int32 value) {
+  set_has_rot_z();
+  rot_z_ = value;
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace tutorial
+}  // namespace Protocol
 
 #ifndef SWIG
 namespace google {

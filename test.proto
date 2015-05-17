@@ -1,0 +1,16 @@
+package Protocol;
+message player_info{
+        required string name=1;
+        required int32 id=2;
+        optional string email=3;
+}
+message player_transform{
+        required string name=1;
+	required int32 pos_x=2;
+	required int32 pos_y=3;
+	required int32 pos_z=4;
+	required int32 rot_x=5;
+	required int32 rot_y=6;
+        required int32 rot_z=7;
+
+}

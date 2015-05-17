@@ -18,9 +18,13 @@ class tcp_connection
 public:
     typedef boost::shared_ptr<tcp_connection> pointer;
     
-    static pointer create(boost::asio::io_service& io_service);
     
-    tcp::socket& socket()
+    
+    static pointer       create(boost::asio::io_service& io_service);
+    
+    void                 start();
+    
+    tcp::socket&         socket()
     {
         return socket_;
     }
@@ -45,8 +49,6 @@ public:
     
     player_info          get_player(int index);
 
-    
-    void start();
 private:
     tcp_connection(boost::asio::io_service& io_service):socket_(io_service){}
     
